@@ -2,7 +2,7 @@ package com.example;
 
 import java.util.List;
 
-public class Lion {
+public class Lion extends Feline {
 
     boolean hasMane;
 
@@ -16,10 +16,11 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
+//    Feline feline = new Feline();
+
 
     public int getKittens() {
-        return feline.getKittens();
+        return super.getKittens();
     }
 
     public boolean doesHaveMane() {
@@ -27,6 +28,6 @@ public class Lion {
     }
 
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return super.getFood("Хищник");
     }
 }
