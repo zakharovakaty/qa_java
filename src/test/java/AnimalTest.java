@@ -8,29 +8,29 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-    @RunWith(Parameterized.class)
-    public class AnimalTest {
-        Animal animal = new Animal();
-        private final String animalKind;
-        private final List<String> expected;
+@RunWith(Parameterized.class)
+public class AnimalTest {
+    Animal animal = new Animal();
+    private final String animalKind;
+    private final List<String> expected;
 
-        public AnimalTest(String animalKind, List<String> expected){
-            this.animalKind = animalKind;
-            this.expected = expected;
-        }
+    public AnimalTest(String animalKind, List<String> expected) {
+        this.animalKind = animalKind;
+        this.expected = expected;
+    }
 
-        @Parameterized.Parameters
-        public static Object[][] getFoodData() {
-            return new Object[][] {
-                    {"Травоядное", Arrays.asList("Трава", "Различные растения")},
-                    {"Хищник", Arrays.asList("Животные", "Птицы", "Рыба")},
-            };
-        }
+    @Parameterized.Parameters(name = "Тестовые данные: {0} {1}")
+    public static Object[][] getFoodData() {
+        return new Object[][]{
+                {"Травоядное", Arrays.asList("Трава", "Различные растения")},
+                {"Хищник", Arrays.asList("Животные", "Птицы", "Рыба")},
+        };
+    }
 
     @Test
-    public void checkGetFood() throws Exception{
+    public void checkGetFood() throws Exception {
         List<String> actual = animal.getFood(animalKind);
-                assertEquals(expected, actual);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -43,7 +43,7 @@ import static org.junit.Assert.assertEquals;
     }
 
     @Test
-    public void checkGetFamily(){
+    public void checkGetFamily() {
         String actual = animal.getFamily();
         String expected = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
         assertEquals(expected, actual);

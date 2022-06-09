@@ -8,8 +8,9 @@ import static org.junit.Assert.assertEquals;
 
 public class FelineTest {
     Feline feline = new Feline();
+
     @Test
-    public void checkEatMeat() throws Exception{
+    public void checkEatMeat() throws Exception {
         List<String> actual = feline.eatMeat();
         List<String> expected = Arrays.asList("Животные", "Птицы", "Рыба");
         assertEquals(expected, actual);
@@ -23,7 +24,7 @@ public class FelineTest {
     }
 
     @Test
-    public void checkKittens(){
+    public void checkKittens() {
         int actual = feline.getKittens();
         int expected = 1;
         assertEquals(expected, actual);
